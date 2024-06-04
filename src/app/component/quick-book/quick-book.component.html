@@ -1,0 +1,40 @@
+<div class="booking-container">
+    <div class="booking-form" *ngIf="isFormVisible">
+      <h2>Quick Book</h2>
+      <form [formGroup]="quickbookForm" >
+  
+        <!-- <div class="form-group">
+          <label>Select Category</label>
+          <mat-radio-group formControlName="category">
+            <mat-radio-button value="employee">Employees</mat-radio-button>
+            <mat-radio-button value="nonEmployee">Non Employees</mat-radio-button>
+            <mat-radio-button value="customBooking">Custom Booking</mat-radio-button>
+          </mat-radio-group>
+        </div> -->
+  
+        <div class="form-group">
+          <label>Select Meal Type</label>
+          <mat-radio-group formControlName="mealType">
+            <mat-radio-button value="lunch">Lunch</mat-radio-button>
+            <mat-radio-button value="dinner">Dinner</mat-radio-button>
+          </mat-radio-group>
+        </div>        
+
+        <div class="text-center">
+          <div class="py-2">
+            Are you sure you want to Book the meal booking for {{ selectedDate | date:'EEEE, MMMM d, y' }}?
+          </div>
+          
+         
+        </div>
+  
+        <div class="form-actions">
+          <button mat-button (click)="closeForm()">Cancel</button>
+          <button mat-raised-button color="primary" (click)="quickBookMeal()">
+            Book
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
